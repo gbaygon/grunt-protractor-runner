@@ -31,10 +31,8 @@ module.exports = function(grunt) {
       args: {}
     });
 
-    // configFile is a special property which need not to be in options{} object.
-    if (!grunt.util._.isUndefined(this.data.configFile)) {
-      opts.configFile = this.data.configFile;
-    }
+    //extends opt with data
+    grunt.util._.extend(opts, this.data);
 
     grunt.verbose.writeln("Options: " + util.inspect(opts));
 
